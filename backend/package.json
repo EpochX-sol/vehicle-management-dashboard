@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
+    "build": "echo 'Building backend...'",
     "debug": "ndb src/app.js",
     "prod": "NODE_ENV=production node src/app.js"
   },
