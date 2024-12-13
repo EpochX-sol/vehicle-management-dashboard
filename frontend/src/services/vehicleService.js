@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL;
+const API_URL = 'https://vehicle-management-dashboard.onrender.com';
 
 const handleResponse = async (response) => {
   if (!response.ok) {
