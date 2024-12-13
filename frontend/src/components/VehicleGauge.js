@@ -1,4 +1,3 @@
- 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -45,7 +44,7 @@ const VehicleGauge = ({ vehicles }) => {
   const totalVehicles = vehicles.length;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
       {Object.entries(statusConfig).map(([status, config]) => {
         const count = statusCounts[status] || 0;
         const percentage = totalVehicles ? Math.round((count / totalVehicles) * 100) : 0;
@@ -57,16 +56,16 @@ const VehicleGauge = ({ vehicles }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className={`p-6 rounded-lg border ${config.borderColor} ${config.bgColor} relative overflow-hidden`}
+            className={`p-4 rounded-lg border ${config.borderColor} ${config.bgColor} relative overflow-hidden`}
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-3">
               <div className="flex items-center">
-                <Icon className={`${config.color} mr-2`} size={24} />
-                <h3 className="text-lg font-semibold text-gray-800">{status}</h3>
+                <Icon className={`${config.color} mr-2`} size={20} />
+                <h3 className="text-sm font-semibold text-gray-800">{status}</h3>
               </div>
               <div className="flex items-center">
-                <Car className="text-gray-400 mr-2" size={20} />
-                <span className="text-2xl font-bold text-gray-800">{count}</span>
+                <Car className="text-gray-400 mr-1" size={16} />
+                <span className="text-xl font-bold text-gray-800">{count}</span>
               </div>
             </div>
 
@@ -78,7 +77,7 @@ const VehicleGauge = ({ vehicles }) => {
                   </span>
                 </div>
               </div>
-              <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-200">
+              <div className="overflow-hidden h-1.5 text-xs flex rounded bg-gray-200">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${percentage}%` }}
@@ -88,8 +87,8 @@ const VehicleGauge = ({ vehicles }) => {
               </div>
             </div>
 
-            <div className="absolute -right-6 -bottom-6 opacity-10">
-              <Icon size={100} className={config.color} />
+            <div className="absolute -right-4 -bottom-4 opacity-10">
+              <Icon size={80} className={config.color} />
             </div>
           </motion.div>
         );

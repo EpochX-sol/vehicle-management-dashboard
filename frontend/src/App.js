@@ -20,32 +20,32 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
   
-        <div className="mb-8">
+        <div className="mb-6">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex justify-between items-center"
+            className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0"
           >
-            <h1 className="text-3xl font-bold text-gray-900">Mini project</h1>
-            <div className="flex space-x-4">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Mini project</h1>
+            <div className="flex space-x-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => refreshVehicles()}
-                className="btn btn-secondary flex items-center"
+                className="btn btn-secondary flex items-center text-sm"
               >
-                <RefreshCw className="mr-2 h-5 w-5" />
+                <RefreshCw className="mr-1.5 h-4 w-4" />
                 Refresh
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsAddModalOpen(true)}
-                className="btn btn-primary flex items-center"
+                className="btn btn-primary flex items-center text-sm"
               >
-                <Plus className="mr-2 h-5 w-5" />
+                <Plus className="mr-1.5 h-4 w-4" />
                 Add Vehicle
               </motion.button>
             </div>
@@ -60,7 +60,7 @@ function App() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg"
+              className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg text-sm"
             >
               {error}
             </motion.div>
@@ -75,7 +75,7 @@ function App() {
               exit={{ opacity: 0 }}
               className="flex justify-center items-center h-64"
             >
-              <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
             </motion.div>
           ) : (
             <VehicleTable
